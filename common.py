@@ -7,6 +7,17 @@ import traceback
 
 ADDON = xbmcaddon.Addon()
 ADDON_NAME = ADDON.getAddonInfo('name')
+CATEGORY_ID_MAP = {"hotmovies": 9000001,
+                   "vipmovies": 9000003,
+                   "topicmovies": 9000010,
+                   "actionmovies": 9000011,
+                   "comedymovies": 9000005,
+                   "lovemovies": 9000017,
+                   "cartoonmovies": 9000009,
+                   "warmovies": 9000008,
+                   "classicmovies": 9000007,
+                   "thrillermovies": 9000015,
+                   "minimovies": 9000016}
 
 
 def log(txt):
@@ -24,7 +35,8 @@ def item_remap(detail):
                 "landscape": "",
                 "poster": detail['img']}
     casts = []
-    for (count, k) in enumerate(detail['actor'].split(',')):
+    actors = detail['actor'].replace(" ", ",").replace("\n", ",")
+    for (count, k) in enumerate(actors.split(',')):
         item = {"name": k,
                 "order": count,
                 "role": "",
@@ -47,7 +59,7 @@ def item_remap(detail):
         "originaltitle": detail.get('title'),
         "playcount": 0,
         "plot": detail.get('description'),
-        "plotoutline": detail.get('description'),
+        "plotoutline": detail.get('summary'),
         "rating": '0.0' if not detail.get('score') else str(detail.get('score')),
         "resume": {"position": 0, "total": detail.get('duration')},
         "runtime": detail.get('duration'),

@@ -40,7 +40,43 @@ class Main:
             full_liz = list()
             if content_type == "hotmovies":
                 xbmcplugin.setContent(int(sys.argv[1]), 'movies')
-                data.parse_movies('hotmovies', 31074, full_liz, self.USECACHE, self.PLOT_ENABLE, self.LIMIT)
+                data.parse_movies('hotmovies', 31001, full_liz, self.USECACHE, self.PLOT_ENABLE, self.LIMIT)
+                xbmcplugin.addDirectoryItems(int(sys.argv[1]), full_liz)
+            if content_type == "vipmovies":
+                xbmcplugin.setContent(int(sys.argv[1]), 'movies')
+                data.parse_movies('vipmovies', 31002, full_liz, self.USECACHE, self.PLOT_ENABLE, self.LIMIT)
+                xbmcplugin.addDirectoryItems(int(sys.argv[1]), full_liz)
+            if content_type == "actionmovies":
+                xbmcplugin.setContent(int(sys.argv[1]), 'movies')
+                data.parse_movies('actionmovies', 31003, full_liz, self.USECACHE, self.PLOT_ENABLE, self.LIMIT)
+                xbmcplugin.addDirectoryItems(int(sys.argv[1]), full_liz)
+            if content_type == "comedymovies":
+                xbmcplugin.setContent(int(sys.argv[1]), 'movies')
+                data.parse_movies('comedymovies', 31004, full_liz, self.USECACHE, self.PLOT_ENABLE, self.LIMIT)
+                xbmcplugin.addDirectoryItems(int(sys.argv[1]), full_liz)
+            if content_type == "lovemovies":
+                xbmcplugin.setContent(int(sys.argv[1]), 'movies')
+                data.parse_movies('lovemovies', 31005, full_liz, self.USECACHE, self.PLOT_ENABLE, self.LIMIT)
+                xbmcplugin.addDirectoryItems(int(sys.argv[1]), full_liz)
+            if content_type == "cartoonmovies":
+                xbmcplugin.setContent(int(sys.argv[1]), 'movies')
+                data.parse_movies('cartoonmovies', 31006, full_liz, self.USECACHE, self.PLOT_ENABLE, self.LIMIT)
+                xbmcplugin.addDirectoryItems(int(sys.argv[1]), full_liz)
+            if content_type == "warmovies":
+                xbmcplugin.setContent(int(sys.argv[1]), 'movies')
+                data.parse_movies('warmovies', 31007, full_liz, self.USECACHE, self.PLOT_ENABLE, self.LIMIT)
+                xbmcplugin.addDirectoryItems(int(sys.argv[1]), full_liz)
+            if content_type == "classicmovies":
+                xbmcplugin.setContent(int(sys.argv[1]), 'movies')
+                data.parse_movies('classicmovies', 31008, full_liz, self.USECACHE, self.PLOT_ENABLE, self.LIMIT)
+                xbmcplugin.addDirectoryItems(int(sys.argv[1]), full_liz)
+            if content_type == "thrillermovies":
+                xbmcplugin.setContent(int(sys.argv[1]), 'movies')
+                data.parse_movies('thrillermovies', 31009, full_liz, self.USECACHE, self.PLOT_ENABLE, self.LIMIT)
+                xbmcplugin.addDirectoryItems(int(sys.argv[1]), full_liz)
+            if content_type == "minimovies":
+                xbmcplugin.setContent(int(sys.argv[1]), 'movies')
+                data.parse_movies('minimovies', 31010, full_liz, self.USECACHE, self.PLOT_ENABLE, self.LIMIT)
                 xbmcplugin.addDirectoryItems(int(sys.argv[1]), full_liz)
         xbmcplugin.endOfDirectory(handle=int(sys.argv[1]))
 

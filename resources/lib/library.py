@@ -89,13 +89,9 @@ class LibraryFunctions():
 
     # Movies in different category
     def _fetch_movie_content(self, content_type, pagenum=1, pagesize=12, useCache=False):
-        if content_type == "hotmovies":
-            categoryId = 9000001
-            category = "hot"
-
         def query_movie_category():
-            return self.json_query_movie_category(categoryId, pagenum, pagesize)
-        return self._fetch_items(useCache, category + "movies", query_movie_category)
+            return self.json_query_movie_category(CATEGORY_ID_MAP[content_type], pagenum, pagesize)
+        return self._fetch_items(useCache, content_type, query_movie_category)
 
     def _fetch_category_list(self, useCache=True):
         if useCache:
